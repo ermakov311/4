@@ -1,0 +1,138 @@
+@use 'variables' as *;
+
+.tabs {
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 4px;
+    padding: 10px 20px;
+    border-radius: $radius;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--color-text-tertiary);
+    transition: color 0.3s, border-color 0.3s;
+    border: 1px solid transparent;
+
+    &:hover {
+      color: var(--color-accent-red-dark);
+    }
+
+    &--active {
+      color: var(--color-accent-red-dark);
+      border-color: var(--color-accent-red-dark);
+
+      .tabs__count {
+        color: var(--color-accent-red-dark);
+      }
+    }
+  }
+
+  &__count {
+    font-weight: 900;
+    font-size: 10px;
+    line-height: 1.5;
+    color: var(--color-text-tertiary);
+    vertical-align: super;
+  }
+}
+
+.course-card {
+  background-color: var(--color-background-white);
+  border: 1px solid var(--color-border);
+  border-radius: $radius;
+  box-shadow: $shadow;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s, box-shadow 0.3s;
+
+  flex: 1 1 300px;
+  max-width: 400px;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: $shadow-hover;
+  }
+
+  &--featured {
+    box-shadow: $shadow-hover;
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  &__content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex-grow: 1;
+    min-height: 200px;
+    height: 100%;
+  }
+
+  &__badge {
+    align-self: flex-start;
+    padding: 1px 8px;
+    border-radius: $radius;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--color-text-white);
+
+    &--marketing {
+      background-color: var(--badge-bg-marketing);
+    }
+    &--management {
+      background-color: var(--badge-bg-management);
+    }
+    &--hr {
+      background-color: var(--badge-bg-hr);
+    }
+    &--design {
+      background-color: var(--badge-bg-design);
+    }
+    &--dev {
+      background-color: var(--badge-bg-dev);
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.5;
+    color: var(--color-text-primary);
+    flex-grow: 1;
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: auto;
+  }
+
+  &__price {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--color-accent-red);
+  }
+
+  &__divider {
+    width: 1px;
+    height: 16px;
+    background-color: var(--color-text-secondary);
+  }
+
+  &__author {
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--color-text-secondary);
+  }
+}
